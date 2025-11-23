@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sleam Valte Gift Claim</title>
+<style>
+body{
+  margin:0;
+  background:#0b0f17;
+  font-family:Arial, sans-serif;
+  color:#d3d9e3;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.card{
+  background:#1a2233;
+  padding:30px;
+  width:350px;
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(0,0,0,0.4);
+  text-align:center;
+}
+.title{
+  font-size:26px;
+  margin-bottom:10px;
+  color:#6ca0ff;
+}
+.amount{
+  font-size:20px;
+  margin:8px 0;
+  color:#84b6ff;
+}
+.button{
+  background:#5086ff;
+  border:none;
+  padding:12px 20px;
+  margin-top:20px;
+  border-radius:8px;
+  cursor:pointer;
+  color:white;
+  font-size:16px;
+  transition:0.2s;
+}
+.button:hover{
+  background:#2c6dff;
+}
+#codeArea{
+  display:none;
+  margin-top:20px;
+}
+input{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  margin-bottom:12px;
+  background:#111720;
+  color:white;
+}
+#messageBox{
+  display:none;
+  margin-top:25px;
+  background:#121a27;
+  padding:20px;
+  border-radius:10px;
+  color:#efefef;
+  text-align:left;
+  font-size:14px;
+  line-height:1.5em;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="title">Sleam Valte Gift Card</div>
+  <div class="amount">$12903 Credit</div>
+  <div id="hiddenCode" style="margin-top:10px; font-size:18px; letter-spacing:2px; background:#111720; padding:10px; border-radius:8px; display:none;">SV-9X1Q-4LM2B-77PA</div>
+  <button class="button" onclick="revealCode()">Reveal Code</button>
+  <button class="button" onclick="showCode()">Enter Code</button>
+
+  <div id="codeArea">
+    <input id="giftCode" placeholder="Enter your gift code">
+    <button class="button" onclick="activate()">Activate</button>
+  </div>
+
+  <div id="messageBox"></div>
+</div>
+
+<script>
+function revealCode(){
+  document.getElementById('hiddenCode').style.display='block';
+}
+
+function showCode(){
+  document.getElementById('codeArea').style.display='block';
+}
+
+function activate(){
+  let msg = `From: Sleam Valte Security\nSubject: Account Alert!\n\nВаш аккаунт был взломан пользователем 1hrenobusov.\nШутка! Запранкуйте его немедленно! 😭😂`;
+  document.getElementById('messageBox').style.display='block';
+  document.getElementById('messageBox').innerText = msg;
+}
+</script>
+</body>
+</html>
